@@ -1,3 +1,22 @@
+;; Mov the number in eax before call
+factorial:
+    push edx
+    push ecx
+
+    mov edx, eax
+    mov ecx, 1
+
+    factorialLoop:
+        imul eax, ecx
+        inc ecx
+        cmp ecx, edx
+        jne factorialLoop
+    
+    factorialDone:
+        pop ecx
+        pop edx
+        ret
+
 ;; Move the base in eax and the exponent in ebx before call
 pow:
     push ecx
@@ -11,9 +30,10 @@ pow:
         cmp ecx, ebx
         jne powLoop
 
-    done:
+    powDone:
         pop edx
         pop ecx
         ret
 
+;; Move the number in eax before call
 sqrt:
