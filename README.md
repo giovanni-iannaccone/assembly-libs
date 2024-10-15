@@ -7,6 +7,7 @@
 | `foor_loops.asm`             | Implementations of the for loop                                        |
 | `quit.asm`                   | Code to quit the program                                               |
 | `stdio.asm`                  | Functions for input and output                                         |
+| `stdlib.asm`                 | Systems interactions, atoi and itoa                                    |
 | `string.asm`                 | Functions for string manipulation                                      |
 
 ## TODO 
@@ -14,6 +15,5 @@
 - [ ] Add functions to work on files
 - [ ] Add functions to work on sockets
 - [ ] Implement more string functions
-- [ ] Implement functions to print integers
 
 > After spending hours and hours learning assembly, I realized that I actually like it
