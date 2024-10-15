@@ -1,8 +1,31 @@
 %include 'string.asm'
+%include 'stdlib.asm'
 
+;; Mov an int to eax before call
 intPrint:
+    call itoa
 
+    push eax
+    mov eax, ebx
+    call stringPrint
+    
+    pop eax
+    ret
+
+;; Mov an int to eax before call
 intPuts:
+    call intPrint
+
+    push eax
+    mov eax, 0xA
+    push eax
+    
+    mov eax, esp
+    call intPrint
+    
+    pop eax
+    pop eax
+    ret
 
 ;; Mov the var where the input will be put to eax before call
 scan:
