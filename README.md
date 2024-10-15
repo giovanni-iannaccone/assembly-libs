@@ -15,3 +15,5 @@
 - [ ] Add functions to work on sockets
 - [ ] Implement more string functions
 - [ ] Implement functions to print integers
+
+> After spending hours and hours learning assembly, I realized that I actually like it

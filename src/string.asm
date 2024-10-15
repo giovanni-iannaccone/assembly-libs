@@ -13,3 +13,9 @@ strlen:
         sub eax, ebx
         pop ebx
         ret
+    
+;; Mov the src to ebx and the dst to eax before call
+strcpy:
+    push ebx
+    pop eax
+    ret
