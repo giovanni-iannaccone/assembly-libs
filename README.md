@@ -5,6 +5,7 @@
 | File                         | Contents                                                               |
 |------------------------------|------------------------------------------------------------------------|
 | `foor_loops.asm`             | Implementations of the for loop                                        |
+| `math.asm`                   | Mathematical functions                                                 |
 | `quit.asm`                   | Code to quit the program                                               |
 | `stdio.asm`                  | Functions for input and output                                         |
 | `stdlib.asm`                 | Systems interactions, atoi and itoa                                    |
