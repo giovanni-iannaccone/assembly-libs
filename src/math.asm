@@ -1,4 +1,15 @@
 ;; Mov the number in eax before call
+abs:
+    push ebx
+
+    mov ebx, eax
+    neg eax
+    cmovl eax, ebx
+    
+    pop ebx
+    ret
+
+;; Mov the number in eax before call
 factorial:
     push edx
     push ecx
