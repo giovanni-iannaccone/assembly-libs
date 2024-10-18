@@ -4,6 +4,7 @@
 
 | File                         | Contents                                                               |
 |------------------------------|------------------------------------------------------------------------|
+| `files.asm`                  | Functions to work on files                                             |
 | `foor_loops.asm`             | Implementations of the for loop                                        |
 | `math.asm`                   | Mathematical functions                                                 |
 | `quit.asm`                   | Code to quit the program                                               |
