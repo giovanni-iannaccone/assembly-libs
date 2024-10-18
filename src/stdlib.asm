@@ -1,6 +1,3 @@
-;; Mov an int to eax before call, the value will be returned in ebx
-itoa:
-
 ;; Mov a numeric string to ebx before call, the value will be returned in eax
 atoi:
     push ebx
@@ -31,4 +28,15 @@ atoi:
         pop ebx
         ret
 
+;; Mov an int to eax before call, the value will be returned in ebx
+itoa:
+
+;; Mov the arguments to ecx and the command to ebx before call
 system:
+    push eax
+    mov eax, 11
+
+    int 0x80
+
+    pop eax
+    ret
