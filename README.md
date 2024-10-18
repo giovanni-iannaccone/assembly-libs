@@ -12,8 +12,6 @@
 | `string.asm`                 | Functions for string manipulation                                      |
 
 ## TODO ✔
-- [ ] Add a library for math functions
-- [ ] Add functions to work on files
 - [ ] Add functions to work on sockets
 - [ ] Implement more string functions
 
