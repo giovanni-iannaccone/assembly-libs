@@ -5,9 +5,9 @@ strlen:
     
     .nextchar:
         cmp byte [eax], 0
-        jz finished
+        jz .finished
         inc eax
-        jmp nextchar
+        jmp .nextchar
 
     .finished:
         sub eax, ebx
