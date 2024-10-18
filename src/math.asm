@@ -17,13 +17,13 @@ factorial:
     mov edx, eax
     mov ecx, 1
 
-    factorialLoop:
+    .loop:
         imul eax, ecx
         inc ecx
         cmp ecx, edx
-        jne factorialLoop
+        jne loop
     
-    factorialDone:
+    .done:
         pop ecx
         pop edx
         ret
@@ -35,16 +35,13 @@ pow:
     mov ecx, 1
     mov edx, eax
 
-    powLoop:
+    .loop:
         imul eax, edx
         inc ecx
         cmp ecx, ebx
-        jne powLoop
+        jne .loop
 
-    powDone:
+    .done:
         pop edx
         pop ecx
         ret
-
-;; Move the number in eax before call
-sqrt:

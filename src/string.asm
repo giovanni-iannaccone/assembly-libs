@@ -3,13 +3,13 @@ strlen:
     push ebx
     mov ebx, eax
     
-    nextchar:
+    .nextchar:
         cmp byte [eax], 0
         jz finished
         inc eax
         jmp nextchar
 
-    finished:
+    .finished:
         sub eax, ebx
         pop ebx
         ret
@@ -22,14 +22,14 @@ strcpy:
     mov esi, ebx
     mov edi, eax
 
-copy_loop:
-    lodsb
-    stosb
-    test al, al
-    jnz copy_loop
+    .loop:
+        lodsb
+        stosb
+        test al, al
+        jnz .loop
 
-    pop eax
-    pop ebx
-    mov eax, edi
-    sub eax, 1
-    ret
+        pop eax
+        pop ebx
+        mov eax, edi
+        sub eax, 1
+        ret

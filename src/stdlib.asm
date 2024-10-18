@@ -6,28 +6,28 @@ atoi:
     push ebx
     mov eax, 0
 
-    atoiConvertLoop:
+    .convertLoop:
         movzx ecx, byte [ebx]
         test ecx, ecx
-        je atoiDone
+        je .done
         
         cmp ecx, 48
-        jl atoiError
+        jl .error
         
         cmp ecx, 57
-        jg atoiError
+        jg .error
         
         sub ecx, 48
         imul eax, eax, 10
         add eax, ecx
         
         inc ebx
-        jmp atoiConvertLoop
+        jmp .convertLoop
 
-    atoiError:
+    .error:
         mov eax, -1
 
-    atoiDone:
+    .done:
         pop ebx
         ret
 
