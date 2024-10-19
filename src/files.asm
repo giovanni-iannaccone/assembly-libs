@@ -27,6 +27,12 @@ create:
     pop ecx
     ret
 
+;; Mov the filename to ebx before call
+delete:
+    mov eax, 10
+    int 0x80
+    ret
+
 ;; Mov the access mode to ecx and the file name to ebx before call. The file descriptor is returned in eax
 open:
     mov eax, 5
