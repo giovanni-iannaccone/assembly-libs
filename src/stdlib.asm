@@ -28,9 +28,54 @@ atoi:
         pop ebx
         ret
 
-;; Mov an int to eax before call, the value will be returned in ebx
+;; Mov an int to eax before call, the value will be returned in the var pointed by ebx
 itoa:
+    push ebp
+    mov ebp, esp
+    push esi
+    push edi
+    push ecx
 
+    mov esi, ebx
+    mov edi, esi
+
+    mov ecx, 0
+
+    cmp eax, 0
+    jge .convert_number
+
+    neg eax
+    mov byte [edi], '-'
+    inc edi
+
+    .convert_number:
+        mov edx, 0
+        mov esi, 10
+
+    .divideLoop:
+        inc ecx
+        xor edx, edx
+        div esi
+        add edx, 48
+        push edx
+        test eax, eax
+        jnz .divideLoop
+
+    .writeDigits:
+        pop eax
+        mov [edi], al
+        inc edi
+        loop .writeDigits
+
+        mov byte [edi], 0
+
+        pop ecx
+        pop edi
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+    
 ;; Mov the arguments to ecx and the command to ebx before call
 system:
     push eax
