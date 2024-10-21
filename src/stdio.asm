@@ -3,12 +3,13 @@
 
 ;; Mov an int to eax before call
 intPrint:
-    call itoa
-
     push eax
+    push ebx
+
+    call itoa
     mov eax, ebx
     call stringPrint
-    
+    pop ebx
     pop eax
     ret
 
