@@ -4,6 +4,10 @@ O_RDONLY    equ 0
 O_WRONLY    equ 1
 O_RDWR      equ 2
 
+SEEK_SET    equ 0
+SEEK_CUR    equ 1
+SEEK_END    equ 2
+
 ;; Mov the file descriptor to ebx before call
 close:
     mov eax, 6
@@ -42,6 +46,12 @@ open:
 ;; Mov the number of bytes to read to edx the variable where to put the contents to ecx and the file descriptor to ebx
 read:
     mov eax, 3
+    int 0x80
+    ret
+
+;; Mov the position to edx, how to move the cursor to ecx and the file descriptor in ebx
+seek:
+    mov eax, 4
     int 0x80
     ret
 
