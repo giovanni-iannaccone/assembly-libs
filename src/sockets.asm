@@ -1,6 +1,6 @@
 ;; Mov a pointer to the list of arguments in ecx before call ( address lenght, address and file descriptor )
 ;; Mov 0 to ecx and the file descriptor to ebx to use standard arguments instead. 
-;; The file descriptor of the new socket is returned in eax
+;; The new socket's file descriptor is returned in eax
 accept:
     cmp ecx, 0
     jnz .start
