@@ -1,16 +1,28 @@
-;; IMPROVE ME
+;; Mov a pointer to the list of arguments in ecx before call ( address lenght, address and file descriptor )
+;; Mov 0 to ecx and the file descriptor to ebx to use standard arguments instead. 
+;; The file descriptor of the new socket is returned in eax
 accept:
-    mov ebx, 5
-    mov eax, 102
-    int 0x80
-    ret
+    cmp ecx, 0
+    jnz .start
+
+    .default:
+        push byte 0
+        push byte 0
+        push ebx
+        mov ecx, esp
+
+    .start:
+        mov ebx, 5
+        mov eax, 102
+        int 0x80
+        ret
 
 ;; Mov a pointer to the list of arguments in ecx before call ( ip address, port and addr family )
 ;; Mov 0 to ecx to use standard arguments instead
 bind:
     mov edi, eax
     cmp ecx, 0
-    jnz 
+    jnz .start
 
     .default:
         push dword 0x00000000
