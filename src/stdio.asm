@@ -1,17 +1,58 @@
 %include 'string.asm'
-%include 'stdlib.asm'
+
+;; Mov the array address to eax before call and the length to ebx
+arrayIntPrint:
+    push ecx
+    push edx
+
+    xor ecx, ecx
+    mov edx, eax
+
+    .loop:
+        cmp ecx, ebx
+        je .done
+        
+        mov eax, [edx + ecx * 4]
+        call intPrint
+        inc ecx
+        jmp .loop
+
+    .done:
+        pop edx
+        pop ecx
+        ret
 
 ;; Mov an int to eax before call
 intPrint:
     push eax
-    push ebx
-
-    call itoa
-    mov eax, ebx
-    call stringPrint
-    pop ebx
-    pop eax
-    ret
+    push ecx
+    push edx
+    push esi
+    mov ecx, 0
+ 
+    .divideLoop:
+        inc ecx
+        mov edx, 0
+        mov esi, 10
+        idiv esi
+        add edx, 48
+        push edx
+        cmp eax, 0
+        jnz .divideLoop
+    
+    .printLoop:
+        dec ecx
+        mov eax, esp
+        call stringPrint
+        pop eax
+        cmp ecx, 0
+        jnz .printLoop
+    
+        pop esi
+        pop edx
+        pop ecx
+        pop eax
+        ret
 
 ;; Mov an int to eax before call
 intPuts:
