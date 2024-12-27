@@ -4,6 +4,7 @@
 
 | File                         | Contents                                                               |
 |------------------------------|------------------------------------------------------------------------|
+| `algorithms.asm`             | Useful algorithms like sorting and search                              |                    
 | `files.asm`                  | Functions to work on files                                             |
 | `foor_loops.asm`             | Implementations of the for loop                                        |
 | `math.asm`                   | Mathematical functions                                                 |
@@ -12,6 +13,7 @@
 | `stdio.asm`                  | Functions for input and output                                         |
 | `stdlib.asm`                 | Systems interactions, atoi and itoa                                    |
 | `string.asm`                 | Functions for string manipulation                                      |
+| `time.asm`                   | Subroutines to deal with time                                          |
 
 ## Contribute 🧩
 We welcome contributions! Please follow these steps:
